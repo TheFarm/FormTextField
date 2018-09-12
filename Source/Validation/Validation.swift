@@ -65,6 +65,6 @@ extension CharacterSet {
     // Workaround for crash in Swift:
     // https://github.com/apple/swift/pull/4162
     func superSetOf(other: CharacterSet) -> Bool {
-        return CFCharacterSetIsSupersetOfSet(self as CFCharacterSet, (other as NSCharacterSet).copy() as! CFCharacterSet)
+        return CFCharacterSetIsSupersetOfSet(self as CFCharacterSet, ((other as NSCharacterSet).copy() as! CFCharacterSet))
     }
 }
